@@ -4,7 +4,10 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
+
+import { Ionicons } from '@expo/vector-icons';
 
 import {
   useState,
@@ -20,32 +23,66 @@ import { router } from 'expo-router';
 export default function AddTask() {
 
   const [titulo, setTitulo] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [data, setData] = useState('');
+  const [horario, setHorario] = useState('');
 
   const { adicionarTarefa } =
     useContext(TaskContext);
 
   function salvar() {
 
-    adicionarTarefa(titulo);
+    adicionarTarefa(titulo, descricao, data, horario);
 
     router.push('/home');
   }
 
   return (
 
-    <View style={styles.container}>
 
-      <Text style={styles.title}>
-        Nova Tarefa
-      </Text>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => router.push('/home')}
+      >
+        <Ionicons name="arrow-back" size={28} color="#8257E5" />
+      </TouchableOpacity>
 
-      <TextInput
-        placeholder="Título da tarefa"
-        style={styles.input}
+      <View style={styles.content}>
+        <Text style={styles.title}>
+          Nova Tarefa
+        </Text>
 
-        value={titulo}
-        onChangeText={setTitulo}
-      />
+        <TextInput
+          placeholder="Título da tarefa"
+          style={styles.input}
+          value={titulo}
+          onChangeText={setTitulo}
+        />
+
+        <TextInput
+          placeholder="Descrição"
+          style={[styles.input, styles.textArea]}
+          value={descricao}
+          onChangeText={setDescricao}
+          multiline
+          numberOfLines={4}
+        />
+
+        <View style={styles.row}>
+          <TextInput
+            placeholder="Dia (Ex: 12/05)"
+            style={[styles.input, { flex: 1, marginRight: 10 }]}
+            value={data}
+            onChangeText={setData}
+          />
+          <TextInput
+            placeholder="Horário (Ex: 14:00)"
+            style={[styles.input, { flex: 1 }]}
+            value={horario}
+            onChangeText={setHorario}
+          />
+        </View>
 
       <TouchableOpacity
         style={styles.button}
@@ -56,7 +93,8 @@ export default function AddTask() {
         </Text>
       </TouchableOpacity>
 
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -65,15 +103,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    justifyContent: 'center',
-    backgroundColor: '#F4F7FB',
+    backgroundColor: '#F8F4FF',
   },
 
   title: {
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 30,
-    color: '#2D5BFF',
+    color: '#8257E5',
     textAlign: 'center',
   },
 
@@ -86,7 +123,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#2D5BFF',
+    backgroundColor: '#8257E5',
     height: 55,
     borderRadius: 10,
 
@@ -98,6 +135,27 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  textArea: {
+    height: 100,
+    textAlignVertical: 'top',
+    paddingTop: 15,
+  },
+
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+  backButton: {
+    padding: 10,
+    marginTop: 20,
+  },
+
+  content: {
+    flex: 1,
+    justifyContent: 'center',
   },
 
 });

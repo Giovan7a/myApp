@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#F4F7FB',
+    backgroundColor: '#F8F4FF',
   },
 
   title: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 40,
-    color: '#2D5BFF',
+    color: '#8257E5',
   },
 
   input: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#2D5BFF',
+    backgroundColor: '#8257E5',
     height: 55,
     borderRadius: 10,
 
