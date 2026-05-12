@@ -30,8 +30,8 @@ export default function Home() {
   const { tarefas, toggleTarefa } = useContext(TaskContext);
 
   const tarefasConcluidas = tarefas.filter(t => t.concluida).length;
-  const porcentagem = tarefas.length > 0 
-    ? Math.round((tarefasConcluidas / tarefas.length) * 100) 
+  const porcentagem = tarefas.length > 0
+    ? Math.round((tarefasConcluidas / tarefas.length) * 100)
     : 0;
   return (
 
@@ -41,16 +41,16 @@ export default function Home() {
       <View style={styles.header}>
         <View style={styles.profileSection}>
           <View style={styles.profileCircle}>
-            <Image 
-              source={{ uri: 'https://images.unsplash.com/photo-1515023115689-589c3971bb0d?q=80&w=150&auto=format&fit=crop' }} 
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=150&auto=format&fit=crop' }}
               style={styles.profileImage}
             />
           </View>
           <Text style={styles.welcome}>
-            Olá, {nome} 
+            Olá, {nome}
           </Text>
         </View>
-        
+
         <TouchableOpacity
           style={styles.iconButton}
           onPress={() => router.push({
@@ -61,7 +61,7 @@ export default function Home() {
           <Ionicons name="person-circle-outline" size={32} color="#8257E5" />
         </TouchableOpacity>
       </View>
-      
+
       {/* Banner de Produtividade */}
       <View style={styles.banner}>
         <View style={styles.bannerInfo}>
@@ -71,12 +71,12 @@ export default function Home() {
           <View style={styles.bannerTextContainer}>
             <Text style={styles.bannerTitle}>Suas tarefas hoje</Text>
             <Text style={styles.bannerSubtitle}>
-              {porcentagem === 100 
-                ? 'Parabéns! Todas as tarefas concluídas! 🎉' 
+              {porcentagem === 100
+                ? 'Parabéns! Todas as tarefas concluídas! 🎉'
                 : 'Você está quase lá! Continue assim.'}
             </Text>
-            
-            <TouchableOpacity 
+
+            <TouchableOpacity
               style={styles.bannerButton}
               onPress={() => router.push('/addTask')}
             >
@@ -114,15 +114,15 @@ export default function Home() {
               <Text style={[styles.task, item.concluida && styles.taskConcluido]}>
                 {item.titulo}
               </Text>
-              
-              <TouchableOpacity 
+
+              <TouchableOpacity
                 style={styles.checkButton}
                 onPress={() => toggleTarefa(item.id)}
               >
-                <Ionicons 
-                  name={item.concluida ? "checkmark-circle" : "ellipse-outline"} 
-                  size={26} 
-                  color={item.concluida ? "#8257E5" : "#CCC"} 
+                <Ionicons
+                  name={item.concluida ? "checkmark-circle" : "ellipse-outline"}
+                  size={26}
+                  color={item.concluida ? "#8257E5" : "#CCC"}
                 />
               </TouchableOpacity>
             </View>
@@ -278,8 +278,9 @@ const styles = StyleSheet.create({
   },
 
   profileImage: {
-    width: '100%',
-    height: '100%',
+    width: 50,
+    height: 50,
+    borderRadius: 25,
   },
 
   banner: {
