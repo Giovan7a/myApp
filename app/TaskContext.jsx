@@ -1,22 +1,35 @@
 import {
   createContext,
   useState,
+  useEffect,
 } from 'react';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const TaskContext = createContext(null);
 
 export function TaskProvider({ children }) {
 
-  const [tarefas, setTarefas] = useState([
-    {
-      id: '1',
-      titulo: 'Estudar React Native',
-      descricao: 'Revisar componentes e navegação.',
-      data: '2026-05-12',
-      horario: '14:00',
-      concluida: false,
-    },
-  ]);
+  const [tarefas, setTarefas] = useState([]);
+
+  // Carregar dados ao iniciar
+  useEffect(() => {
+    async function carregarTarefas() {
+      const dados = await AsyncStorage.getItem('@unitask_tarefas');
+      if (dados) {
+        setTarefas(JSON.parse(dados));
+      }
+    }
+    carregarTarefas();
+  }, []);
+
+  // Salvar dados quando houver mudanças
+  useEffect(() => {
+    async function salvarTarefas() {
+      await AsyncStorage.setItem('@unitask_tarefas', JSON.stringify(tarefas));
+    }
+    salvarTarefas();
+  }, [tarefas]);
 
   function adicionarTarefa(titulo, descricao, data, horario) {
 

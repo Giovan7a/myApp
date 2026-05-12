@@ -4,6 +4,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from 'react-native';
 
 import { router } from 'expo-router';
@@ -29,6 +30,11 @@ export default function Login() {
   return (
 
     <View style={styles.container}>
+
+      <Image
+        source={{ uri: 'https://cdn-icons-png.flaticon.com/512/4481/4481163.png' }}
+        style={styles.logo}
+      />
 
       <Text style={styles.title}>
         UniTask
@@ -107,6 +113,13 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  logo: {
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    marginBottom: 20,
   },
 
 });

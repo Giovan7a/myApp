@@ -31,8 +31,8 @@ export default function Profile() {
         </Text>
 
         <View style={styles.profileHeader}>
-          <Image 
-            source={{ uri: 'https://images.unsplash.com/photo-1515023115689-589c3971bb0d?q=80&w=150&auto=format&fit=crop' }} 
+          <Image
+            source={{ uri: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=150&auto=format&fit=crop' }}
             style={styles.largeProfileImage}
           />
           <Text style={styles.userName}>{nome || 'Usuário'}</Text>
@@ -41,7 +41,7 @@ export default function Profile() {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Preferências</Text>
-          
+
           <View style={styles.option}>
             <View style={styles.optionInfo}>
               <Ionicons name="moon-outline" size={22} color="#8257E5" />
@@ -61,7 +61,7 @@ export default function Profile() {
           <Text style={styles.editButtonText}>Editar Perfil</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.logoutButton}
           onPress={() => router.replace('/login')}
         >
@@ -193,4 +193,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 10,
   },
-});
+});
