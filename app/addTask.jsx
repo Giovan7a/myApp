@@ -34,7 +34,7 @@ export default function AddTask() {
 
     adicionarTarefa(titulo, descricao, data, horario);
 
-    router.push('/home');
+    router.back();
   }
 
   return (
@@ -43,7 +43,7 @@ export default function AddTask() {
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => router.push('/home')}
+        onPress={() => router.back()}
       >
         <Ionicons name="arrow-back" size={28} color="#8257E5" />
       </TouchableOpacity>

@@ -27,7 +27,7 @@ export default function Home() {
 
   const { nome } = useLocalSearchParams();
 
-  const { tarefas, toggleTarefa } = useContext(TaskContext);
+  const { tarefas, toggleTarefa, removerTarefa } = useContext(TaskContext);
 
   const tarefasConcluidas = tarefas.filter(t => t.concluida).length;
   const porcentagem = tarefas.length > 0
@@ -103,6 +103,7 @@ export default function Home() {
             onPress={() => router.push({
               pathname: '/details',
               params: {
+                id: item.id,
                 titulo: item.titulo,
                 descricao: item.descricao,
                 data: item.data,

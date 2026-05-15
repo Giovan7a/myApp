@@ -8,15 +8,23 @@ import {
 
 import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
+import { useContext } from 'react';
+import { TaskContext } from './TaskContext';
 
 export default function Details() {
-  const { titulo, descricao, data, horario } = useLocalSearchParams();
+  const { id, titulo, descricao, data, horario } = useLocalSearchParams();
+  const { removerTarefa } = useContext(TaskContext);
+
+  function apagarTarefa() {
+    removerTarefa(id);
+    router.back();
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => router.push('/home')}
+        onPress={() => router.back()}
       >
         <Ionicons name="arrow-back" size={28} color="#8257E5" />
       </TouchableOpacity>
@@ -47,6 +55,14 @@ export default function Details() {
             </View>
           </View>
         </View>
+
+        <TouchableOpacity 
+          style={styles.deleteButton}
+          onPress={apagarTarefa}
+        >
+          <Ionicons name="trash-outline" size={20} color="#FFF" />
+          <Text style={styles.deleteButtonText}>Apagar Tarefa</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -117,5 +133,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#555',
     marginLeft: 8,
+  },
+
+  deleteButton: {
+    backgroundColor: '#FF4B4B',
+    height: 55,
+    borderRadius: 15,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30,
+  },
+
+  deleteButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 10,
   },
 });
