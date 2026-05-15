@@ -20,7 +20,7 @@ export default function Profile() {
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => router.push('/home')}
+        onPress={() => router.back()}
       >
         <Ionicons name="arrow-back" size={28} color="#8257E5" />
       </TouchableOpacity>

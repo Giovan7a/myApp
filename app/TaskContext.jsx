@@ -51,6 +51,10 @@ export function TaskProvider({ children }) {
     ));
   }
 
+  function removerTarefa(id) {
+    setTarefas(tarefas.filter(t => t.id !== id));
+  }
+
   return (
 
     <TaskContext.Provider
@@ -58,6 +62,7 @@ export function TaskProvider({ children }) {
         tarefas,
         adicionarTarefa,
         toggleTarefa,
+        removerTarefa,
       }}
     >
       {children}
