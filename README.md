@@ -25,3 +25,57 @@ Aplicativo mobile desenvolvido em React Native com Expo Router para organizaçã
 
 ```bash
 git clone https://github.com/Giovan7a/myApp.git
+Entre na pasta:
+
+```bash
+cd myApp
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
+
+```bash
+npm start
+```
+
+---
+
+# Como utilizar
+
+- Abra o Expo Go no celular
+- Escaneie o QR Code
+- Utilize o aplicativo normalmente
+
+---
+
+# Estrutura das telas
+
+- Login
+- Home
+- AddTask
+- Details
+- Settings
+
+---
+
+# Componentes utilizados
+
+- View
+- Text
+- TextInput
+- TouchableOpacity
+- FlatList
+- Image
+- Switch
+
+---
+
+# Integrantes do grupo
+
+| Giovanna Rodrigues | Todo o site|
+---
