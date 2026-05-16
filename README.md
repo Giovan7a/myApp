@@ -1,10 +1,4 @@
-#prints das telas
 
-<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 42" src="https://github.com/user-attachments/assets/78370965-d357-403f-b917-8027570b1205" />
-<img width="720" height="1600" alt="WhatsApp Image 2026-05-15 at 21 54 42 (1)" src="https://github.com/user-attachments/assets/7b863eb2-6758-4b08-b875-b38abe86e045" />
-<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 42 (2)" src="https://github.com/user-attachments/assets/2c1fdda2-2ad7-4935-a848-b00df895e220" />
-<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 43" src="https://github.com/user-attachments/assets/fa8bfe6b-9543-4a4f-8599-a580e55ffa5e" />
-<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 43 (1)" src="https://github.com/user-attachments/assets/1fbe32ce-5484-43a0-ab02-c7f50f06c5c5" />
 # UniTask
 
 Aplicativo mobile desenvolvido em React Native com Expo Router para organização de tarefas acadêmicas.
@@ -86,3 +80,10 @@ npm start
 
 | Giovanna Rodrigues | Todo o site|
 ---
+#prints das telas
+
+<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 42" src="https://github.com/user-attachments/assets/78370965-d357-403f-b917-8027570b1205" />
+<img width="720" height="1600" alt="WhatsApp Image 2026-05-15 at 21 54 42 (1)" src="https://github.com/user-attachments/assets/7b863eb2-6758-4b08-b875-b38abe86e045" />
+<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 42 (2)" src="https://github.com/user-attachments/assets/2c1fdda2-2ad7-4935-a848-b00df895e220" />
+<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 43" src="https://github.com/user-attachments/assets/fa8bfe6b-9543-4a4f-8599-a580e55ffa5e" />
+<img width="1080" height="2400" alt="WhatsApp Image 2026-05-15 at 21 54 43 (1)" src="https://github.com/user-attachments/assets/1fbe32ce-5484-43a0-ab02-c7f50f06c5c5" />
